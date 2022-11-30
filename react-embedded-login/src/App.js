@@ -1,7 +1,6 @@
 import React from 'react';
 import { useAuth } from '@frontegg/react'
 import { Link } from 'react-router-dom'
-import UserButton from './components/UserButton';
 
 function App() {
   const { user, isAuthenticated } = useAuth();
