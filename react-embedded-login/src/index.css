@@ -25,6 +25,10 @@ button {
   margin: 2px;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 a:link, a:visited {
   text-decoration: none;
   color: white;
