@@ -4,7 +4,7 @@ import App from './App';
 import './index.css';
 
 import { FronteggProvider} from '@frontegg/react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Link } from 'react-router-dom';
 
 const contextOptions = {
   baseUrl: 'https://app-frtqiefxjqn9.frontegg.com',
@@ -17,6 +17,7 @@ const authOptions = {
 const themeOptions = {
     loginBox: {
         themeName: 'classic',
+
     }
 }
 
@@ -25,14 +26,15 @@ const localizations = {
     loginBox: {
       login: {
        continue: 'New button text'
-      },
+      }
     },
   },
 };
 
 ReactDOM.render(
   <BrowserRouter>
-     <FronteggProvider contextOptions={contextOptions} hostedLoginBox={false} themeOptions={themeOptions} localizations={localizations}>
+     <FronteggProvider contextOptions={contextOptions} hostedLoginBox={false} themeOptions={themeOptions} localizations={localizations} 
+     authOptions={{routes: {signUpUrl:'yourUrlHere'}}}>
         <App />
      </FronteggProvider>
   </BrowserRouter>,
