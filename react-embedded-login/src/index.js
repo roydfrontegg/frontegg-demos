@@ -34,7 +34,7 @@ const localizations = {
 ReactDOM.render(
   <BrowserRouter>
      <FronteggProvider contextOptions={contextOptions} hostedLoginBox={false} themeOptions={themeOptions} localizations={localizations} 
-     authOptions={{routes: {signUpUrl:'yourUrlHere'}}}>
+     authOptions={{routes: {signUpUrl:'/yourUrlHere'}}}>
         <App />
      </FronteggProvider>
   </BrowserRouter>,

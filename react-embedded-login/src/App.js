@@ -1,15 +1,31 @@
-import React from 'react';
-import { useAuth } from '@frontegg/react'
+import React, { useEffect, useState } from 'react';
+import { useAuth, useAuthActions } from '@frontegg/react'
 import { Link } from 'react-router-dom'
 import { AdminPortal } from '@frontegg/react';
 
 function App() {
 
   const { user, isAuthenticated } = useAuth();
+  const { switchTenant } = useAuthActions();
 
   const handleClick = () => {
     AdminPortal.show();
   };
+
+  const handleSwitchTenant = () => { 
+    if (user.tenantId === '4cab2f40-8810-4c89-b85f-e2c1ef8ada3c') {
+      console.log(`Swithching tenant: Roy Daniel account`)
+      switchTenant({ tenantId: '36ad8775-ea37-4b60-8032-8738af07be87'})
+    }
+    else {
+      console.log(`Swithching tenant: apiTest`)
+      switchTenant({ tenantId: '4cab2f40-8810-4c89-b85f-e2c1ef8ada3c'})
+    }
+  };
+
+  // useEffect(() => {
+  //   console.log(user.tenantId)
+  // },[])
 
   return (
     <div className='App'>
@@ -22,6 +38,7 @@ function App() {
             <Link to={`/account/logout`}>logout</Link>
           </button>
           <button onClick={handleClick}>Settings</button>
+          <button onClick={handleSwitchTenant}>Select Active Tenant</button>
         </div>
 
       ) :
