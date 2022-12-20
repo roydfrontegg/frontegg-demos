@@ -23,9 +23,14 @@ function App() {
     }
   };
 
-  // useEffect(() => {
-  //   console.log(user.tenantId)
-  // },[])
+  const openPrivacyAndSecurityModule = () => {
+    window.location.href = '#/admin-box/privacy';
+    AdminPortal.show();
+  };
+
+  useEffect(() => {
+    console.log(user)
+  },[])
 
   return (
     <div className='App'>
@@ -38,7 +43,9 @@ function App() {
             <Link to={`/account/logout`}>logout</Link>
           </button>
           <button onClick={handleClick}>Settings</button>
-          <button onClick={handleSwitchTenant}>Select Active Tenant</button>
+          <button onClick={handleSwitchTenant}>Switch Active Tenant</button>
+          <h4>Active tenant id: {user.tenantId}</h4>
+          <button onClick={openPrivacyAndSecurityModule}>Open Privacy & Security</button>
         </div>
 
       ) :
@@ -48,7 +55,10 @@ function App() {
         <button>
           <Link to={`/account/login`}>login</Link>
         </button>
+        
+
       </div>
+
 
       }
     </div>

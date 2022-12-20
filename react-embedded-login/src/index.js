@@ -4,7 +4,7 @@ import App from './App';
 import './index.css';
 
 import { FronteggProvider} from '@frontegg/react';
-import { BrowserRouter, Link } from 'react-router-dom';
+import { BrowserRouter, Link, redirect } from 'react-router-dom';
 
 const contextOptions = {
   baseUrl: 'https://app-frtqiefxjqn9.frontegg.com',
@@ -17,7 +17,16 @@ const authOptions = {
 const themeOptions = {
     loginBox: {
         themeName: 'classic',
-
+        socialLogins: {
+          buttonStyle: {
+            base: {
+              color: 'red',
+              border: 'solid red',
+              background: 'blue',
+              
+            }
+          }
+        }
     }
 }
 
@@ -25,7 +34,8 @@ const localizations = {
   en: {
     loginBox: {
       login: {
-       continue: 'New button text'
+       continue: 'New button text',
+       title: "my custom title"
       }
     },
   },
