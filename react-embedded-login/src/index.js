@@ -7,7 +7,7 @@ import { FronteggProvider} from '@frontegg/react';
 import { BrowserRouter, Link, redirect } from 'react-router-dom';
 
 const contextOptions = {
-  baseUrl: 'dev-taylor-auth.slopesoftware.com',
+  baseUrl: 'https://app-frtqiefxjqn9.frontegg.com',
 };
 
 const authOptions = {
