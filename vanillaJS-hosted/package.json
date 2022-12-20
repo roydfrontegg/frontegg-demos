@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "@frontegg/js": "^6.48.0"
-  },
-  "scripts": {
-    "start": "open public/index.html "
-  }
-}
